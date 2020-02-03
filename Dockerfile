@@ -16,4 +16,5 @@ RUN git clone https://github.com/mozilla/cipherscan
 WORKDIR /app/cipherscan
 # To download additional software.
 RUN ./cscan.sh --help
-ENTRYPOINT ["/app/cipherscan/cipherscan"]
+ADD run.sh /app/cipherscan/run.sh
+ENTRYPOINT ["/app/cipherscan/run.sh"]
